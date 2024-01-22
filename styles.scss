@@ -1,240 +1,224 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,400;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,400;1,600&display=swap");
 
 @mixin tablet {
-    @media only screen and (min-width: 768px) {
-      @content;
-    }
+  @media only screen and (min-width: 768px) {
+    @content;
   }
-  
-@mixin desktop {
-    @media only screen and (min-width: 992px) {
-        @content;
-    }
 }
 
-*{
-    font-family: 'Exo', sans-serif;
+@mixin desktop {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+* {
+  font-family: "Exo", sans-serif;
 }
 
 main {
-    margin-top: 80px; 
+  margin-top: 80px;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    border-bottom: 5px solid #ec2100;
-    padding: 15px 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  border-bottom: 5px solid #ec2100;
+  padding: 15px 10%;
+  max-width: 100%;
+  z-index: 99;
+  .logo-sochi,
+  .logo-claro {
+    display: inline-block;
+    height: 100%;
+    width: auto;
     max-width: 100%;
-    z-index: 99; 
-    .logo-sochi, .logo-claro {
-        display: inline-block;
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-    }
-
-    .logo-claro {
-        float: right;
-    }
+  }
+  .logo-claro {
+    float: right;
+  }
 }
 
 .countdown-video {
+  background: url(../img/background.jpg) no-repeat center top / cover;
+  padding: 55px 25px;
+  &::after {
+    background-color: rgba(0, 0, 0, 0.45);
+    bottom: 0;
+    content: "";
+    left: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
 
-    background: url(../img/background.jpg) no-repeat center top / cover;
-    padding: 55px 25px;
-    &::after {
-        background-color: rgba(0, 0, 0, 0.45); 
-        bottom: 0;
-        content: "";
-        left: 0;
-        top: 0;
-        right: 0;
-        position: absolute;
+  .countdown__timer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px 0 55px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 auto;
+    @include tablet {
+      font-size: 30px;
+      max-width: 700px;
     }
-
-    .countdown__timer {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 10px 0 55px 0;
-        border-radius: 10px;
-        text-align: center;
-        color: #fff;
-        font-size: 40px;
-        font-weight: bold;
-        margin: 0 auto;
-
-        @include tablet {
-            font-size: 30px;
-            max-width: 700px;
-        }
-
-        &__title {
-            width: 100%;
-            margin-bottom: 20px;
-            z-index: 1;
-        }
-
-        &__date {
-            display: flex;
-            justify-content: center; 
-            flex-direction: column-reverse;
-            align-items: center;
-            border: 2px solid white;
-            border-radius: 50%;
-            width: 250px;
-            height: 250px;
-            margin: 10px;
-            z-index: 1;
-            @include tablet {
-                width: 150px;
-                height: 150px;
-            }
-        }
+    &__title {
+      width: 100%;
+      margin-bottom: 20px;
+      z-index: 1;
     }
-
-    #player-youtube {
-        height: 0;
-        max-width: 90%;
-        margin: 0 auto;
-        padding-bottom: 70%; 
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        @include desktop {
-            max-width: 935px;
-            padding-bottom: 30%;
-        }
-        #player {
-            height: 100%;
-            left: 0;
-            top: 0;
-            position: absolute;
-            width: 100%;
-        }
+    &__date {
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+      align-items: center;
+      border: 2px solid white;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      margin: 10px;
+      z-index: 1;
+      @include tablet {
+        width: 150px;
+        height: 150px;
+      }
     }
+  }
 
+  #player-youtube {
+    height: 0;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-bottom: 70%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    @include desktop {
+      max-width: 935px;
+      padding-bottom: 30%;
+    }
+    #player {
+      height: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
 }
 
-
-.lista{
-    margin-top: -20px;
-    background-color: #232323;
-    position: relative;
-    padding: 35px 0px 100px 0px;
-    border-bottom: 5px solid #353535;
-    &__title{
-        color: #fff;
-        font-size: 30px;
-        font-weight: 400;
-        text-align: center;
-        padding: 20px 0;
-        margin: 0;
-        @include tablet {
-            font-size: 40px;
-        }
+.lista {
+  margin-top: -20px;
+  background-color: #232323;
+  position: relative;
+  padding: 35px 0px 100px 0px;
+  border-bottom: 5px solid #353535;
+  &__title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    @include tablet {
+      font-size: 40px;
     }
-    &__videos {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 10px 0 55px 0;
-        border-radius: 10px;
-        text-align: center;
-        color: #fff;
-        font-size: 20px;
-        font-weight: bold;
-        margin: 0 auto;
-        @include tablet {
-            max-width: 80%;
-        }
+  }
+  &__videos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px 0 55px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    @include tablet {
+      max-width: 80%;
     }
-    &__videos__link{
-        width: 250px;
-        height: 250px;
-        margin: 10px;
-        padding: 25px;
-        z-index: 1;
-        img{
-            max-width: 100%;
-            width: 100%;
-        }
-        @include tablet {
-            width: 240px;
-            height: 240px;
-        }
+  }
+  &__videos__link {
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    padding: 25px;
+    z-index: 1;
+    img {
+      max-width: 100%;
+      width: 100%;
     }
-    &__videos__link--title {
-        font-size: 20px;
-        font-weight: 400;
-        color: #fff;
-        width: 100%;
+    @include tablet {
+      width: 240px;
+      height: 240px;
     }
+  }
+  &__videos__link--title {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    width: 100%;
+  }
 }
 
 .footer {
-    background-color: #000;
-    padding: 20px 80px;
+  background-color: #000;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  &__links {
     display: flex;
-    justify-content: space-between;
-
-    &__links {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        align-self: flex-start;
-        * {
-            margin-right: 20px;
-            color: #fff
-        }
+    justify-content: flex-start;
+    align-items: center;
+    align-self: flex-start;
+    * {
+      margin-right: 20px;
+      color: #fff;
     }
-
-    &__logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-self: center;
-
-        img {
-            max-width: 100%;
-            width: 100%;
-        }
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    img {
+      max-width: 100%;
+      width: 100%;
     }
-
-    &__social {
-        display: flex;
-        align-items: center; 
-        justify-content: flex-end;
-
-        a {
-            padding: 10px 10px 5px 10px;            
-            border-radius: 10px;
-            margin: 0 10px;
-        }
-
-        img {
-            height: 20px;
-            max-width: 100%;
-        }
-
-        .mb {
-            background-color: cyan;
-        }
-
-        .fb {
-            background-color: #3b5998;
-        }
-
-        .tw {
-            background-color: #00acee;
-        }
-
-        .yb {
-            background-color: #ff0000;
-        }
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    a {
+      padding: 10px 10px 5px 10px;
+      border-radius: 10px;
+      margin: 0 10px;
     }
+    img {
+      height: 20px;
+      max-width: 100%;
+    }
+    .mb {
+      background-color: cyan;
+    }
+    .fb {
+      background-color: #3b5998;
+    }
+    .tw {
+      background-color: #00acee;
+    }
+    .yb {
+      background-color: #ff0000;
+    }
+  }
 }
