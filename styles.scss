@@ -45,6 +45,7 @@ header {
 .countdown-video {
   background: url(../img/background.jpg) no-repeat center top / cover;
   padding: 55px 25px;
+  position: relative;
   &::after {
     background-color: rgba(0, 0, 0, 0.45);
     bottom: 0;
@@ -86,7 +87,7 @@ header {
       height: 250px;
       margin: 10px;
       z-index: 1;
-      @include tablet {
+      @include desktop() {
         width: 150px;
         height: 150px;
       }
